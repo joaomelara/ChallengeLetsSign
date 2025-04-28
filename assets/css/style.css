@@ -1,0 +1,12 @@
+.fiscutNav{
+    height: 72px;
+    box-shadow: 0 4px 2px -2px #cbcbcb;
+}
+
+.fiscutLogo {
+    height: auto;         
+    max-height: 32px;      
+    width: auto;           
+    max-width: 100%;       
+  }
+  
