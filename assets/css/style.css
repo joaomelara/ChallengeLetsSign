@@ -47,3 +47,13 @@
     max-width: 100%;
     filter: #24D3FE;
 }
+
+.titleLetsSign{
+    color: #353470;
+    font-size: 22px;
+    font-weight: 60px;
+}
+
+.testUseRemainingSpace {
+    min-height: 100%;
+}
