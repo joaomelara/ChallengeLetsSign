@@ -11,46 +11,62 @@
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="d-flex flex-column">
   <header>
     <nav class="navbar navbar-light bg-white fiscutNav px-5">
       <a class="navbar-brand" href="#">
-        <img class="fiscutLogo" src="assets/images/FiscutLogo.png" alt="FiscutLogo" />
-        <span class="fiscutLogoText">Fiscut</span>
+        <img class="genericIcon" src="assets/images/FiscutLogo.png" alt="genericIcon" />
       </a>
-
-      <img src="assets/images/shieldIcon.png" alt="shieldIcon" />
+      <div class="d-flex align-items-center">
+        <span class="me-2">Ambiente seguro LetsSign</span>
+        <img src="assets/images/shieldIcon.png" alt="shieldIcon" />
+      </div>
     </nav>
   </header>
-  <main class="d-flex flex-nowrap">
-    <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" style="width: 4.5rem;">
+  <main class="d-flex flex-row">
+    <div class="d-flex flex-column flex-shrink-0 primaryColor sidebar" style="width: 4.5rem">
       <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
         <li class="nav-item">
-          <a href="#" class="nav-link active py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Home">
-            <img class="fiscutLogo" src="assets/images/DownloadDocIcon.png" alt="Download document icon." />
+          <a href="" class="nav-link py-4 pt-5 rounded-0">
+            <img class="genericIcon" src="assets/images/downloadDocIcon.png" alt="Download document icon." />
           </a>
         </li>
         <li>
-          <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Dashboard">
-            <img class="fiscutLogo" src="assets/images/signIcon.png" alt="Check if signed document icon." />
-          </a>
+          <div class="nav-link py-4 rounded-0">
+            <img class="genericIcon" src="assets/images/signIcon.png" alt="Check if signed document icon." />
+          </div>
         </li>
         <li>
-          <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders" data-bs-original-title="Orders">
-            <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Orders"><use xlink:href="#table"></use></svg>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products" data-bs-original-title="Products">
-            <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Products"><use xlink:href="#grid"></use></svg>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Customers" data-bs-original-title="Customers">
-            <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Customers"><use xlink:href="#people-circle"></use></svg>
-          </a>
+          <div class="nav-link py-4 rounded-0">
+            <img class="arrow-icon" src="assets/images/accountArrowIcon.png"
+              alt="Arrow pointing to information about user." />
+          </div>
         </li>
       </ul>
+    </div>
+    <div class="d-flex flex-column flex-shrink-0 secondaryColor sidebar">
+      <ul class="nav nav-pills nav-flush flex-column mb-auto px-5">
+        <li class="nav-item">
+          <div class="nav-link py-4 pt-5 rounded-0">
+            <span class="text-white sidebar-text">Baixar documento</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-link py-4 rounded-0">
+            <span class="text-white sidebar-text">0/1 Assinaturas</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-link flex-column py-4 rounded-0">
+            <span class="small-sidebar-text">suspicious.porcupine379@p...</span>
+            <span class="text-white sidebar-text">Assinar como parte</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Assinatura para Fiscut</h4>
     </div>
   </main>
 

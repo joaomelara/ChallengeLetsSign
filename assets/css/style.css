@@ -1,12 +1,49 @@
-.fiscutNav{
+.fiscutNav {
     height: 72px;
     box-shadow: 0 4px 2px -2px #cbcbcb;
 }
 
-.fiscutLogo {
-    height: auto;         
-    max-height: 32px;      
-    width: auto;           
-    max-width: 100%;       
-  }
-  
+.genericIcon {
+    height: auto;
+    max-height: 32px;
+    width: auto;
+    max-width: 100%;
+}
+
+.primaryColor {
+    background-color: #35326F;
+}
+
+.secondaryColor {
+    background-color: #3D3D84;
+}
+
+.fiscutNav span {
+    font-size: 14px;
+    color: #b4b4b4;
+    font-weight: 500;
+}
+
+.sidebar {
+    min-height: 100vh;
+}
+
+.sidebar-text {
+    font-size: 13px;
+    color: #b4b4b4;
+    font-weight: 500;
+}
+
+.small-sidebar-text {
+    font-size: 10px;
+    color: #24D3FE;
+    font-weight: 500;
+}
+
+.arrow-icon {
+    height: auto;
+    max-height: 32px;
+    width: auto;
+    max-width: 100%;
+    filter: #24D3FE;
+}
