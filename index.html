@@ -71,13 +71,35 @@
       </ul>
     </div>
 
-    <div class="d-flex align-self-stretch m-5">
-      <span class="titleLetsSign">Assinatura para Fiscut</span>
-      <span class="descriptionLetsSign">
-        Bem-vindo(a) à aprovação eletrônica de documentos do LetsSign . Os próximos passos servirão de guia durante o processo de aprovação.
-      </span>
+    <div class="m-5 token-main">
+      <h2 class="titleLetsSign">Assinatura para Fiscut</h2>
+      <p class="descriptionLetsSign">
+        Bem-vindo(a) à aprovação eletrônica de documentos do 
+        <span style="color: #8654FF; font-weight: 500; ">LetsSign</span>. <br />
+        Os próximos passos servirão de guia durante o processo de aprovação.
+      </p>
+
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+
+      <div class="emptySpace"></div>
+      <p class="mt-5 descriptionLetsSign" >Enviamos um token por: <span style="color: #8654FF; font-weight: 500; " >suspicious.porcupine379@passinbox.com</span></p>
+      <p class="mt-5 attentionLetsSign" >Insira o Token recebido no campo abaixo</p>
+
+      <input type="text" class="tokenInput mt-4" id="tokenInput" />
+
+      <p class="mt-4 descriptionLetsSign">
+        Não recebeu ou precisa de um novo token? 
+        <span style="color: #8654FF; font-weight: 500; " >Reenviar</span>
+      </p>
+
+      <div class="d-flex flex-row justify-content-between mt-5 py-5">
+        <button type="button" class="btn btn-secondary button-back btn-md px-3" id="btn-cancel">Voltar</button>
+        <button type="button" class="btn btn-primary btn-md button-advance px-3" id="btn-sign">Próximo passo</button>
+      </div>
+
     </div>
-  </main>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
