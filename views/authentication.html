@@ -125,20 +125,20 @@
         <!-- Modal Usar Dispositivo Atual -->
         <div class="modal fade" id="modalAtual" tabindex="-1" aria-labelledby="modalAtualLabel" aria-hidden="true">
             <div class="modal-dialog">
-            <div class="modal-content">
+              <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="modalAtualLabel">Dispositivo Atual</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h5 class="modal-title" id="modalAtualLabel">Tirar foto</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                Aqui você poderá tirar uma foto com a câmera do dispositivo atual.
+                  <video id="video" width="100%" autoplay playsinline></video>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
+              </div>
             </div>
-            </div>
-        </div>
+          </div>
         
         <!-- Modal Usar Outro Dispositivo -->
         <div class="modal fade" id="modalOutro" tabindex="-1" aria-labelledby="modalOutroLabel" aria-hidden="true">
@@ -158,6 +158,31 @@
             </div>
         </div>
 
+
+        <script>
+              let stream = null;
+            
+              const modalAtual = document.getElementById('modalAtual');
+              const video = document.getElementById('video');
+            
+              modalAtual.addEventListener('shown.bs.modal', async () => {
+                try {
+                  stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                  video.srcObject = stream;
+                } catch (err) {
+                  console.error("Erro ao acessar a câmera: ", err);
+                  video.innerHTML = "Não foi possível acessar a câmera.";
+                }
+              });
+            
+              modalAtual.addEventListener('hidden.bs.modal', () => {
+                if (stream) {
+                  stream.getTracks().forEach(track => track.stop());
+                  stream = null;
+                }
+              });
+        </script>
+    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
             crossorigin="anonymous"></script>
