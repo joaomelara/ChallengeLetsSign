@@ -92,21 +92,23 @@
 
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <img src="../assets/images/laptopIcon.png" alt="Computer icon" class="authIcons" />
-                            <p class="descriptionLetsSign">Usar dispositivo atual</p>
-                        </div>
+                        <div class="card text-center w-100" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalAtual">
+                            <div class="card-body">
+                                <img src="../assets/images/laptopIcon.png" alt="Computer icon" class="authIcons" />
+                                <p class="descriptionLetsSign">Usar dispositivo atual</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <img src="../assets/images/phoneIcon.png" alt="Smartphone icon" class="authIcons" />
-                            <p class="descriptionLetsSign">Usar outro dispositivo</p>
-                        </div>
+                    <div class="col-sm-6">
+                        <div class="card text-center w-100" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalOutro">
+                            <div class="card-body">
+                                <img src="../assets/images/phoneIcon.png" alt="Smartphone icon" class="authIcons" />
+                                <p class="descriptionLetsSign">Usar outro dispositivo</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    
+                    
             </div>
 
 
@@ -120,6 +122,41 @@
 
         </div>
 
+        <!-- Modal Usar Dispositivo Atual -->
+        <div class="modal fade" id="modalAtual" tabindex="-1" aria-labelledby="modalAtualLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="modalAtualLabel">Dispositivo Atual</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                Aqui você poderá tirar uma foto com a câmera do dispositivo atual.
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Modal Usar Outro Dispositivo -->
+        <div class="modal fade" id="modalOutro" tabindex="-1" aria-labelledby="modalOutroLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="modalOutroLabel">Outro Dispositivo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                Você poderá escanear um QR Code para continuar em outro dispositivo.
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
