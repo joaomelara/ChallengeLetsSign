@@ -93,7 +93,7 @@
 
       <p class="mt-4 descriptionLetsSign">
         Não recebeu ou precisa de um novo token?
-        <a href="#" style="color: #8654FF; font-weight: 500; text-decoration: none; ">Reenviar</a>
+        <a href="#" onclick="makeToken(10)" style="color: #8654FF; font-weight: 500; text-decoration: none; ">Reenviar</a>
       </p>
 
       <div class="d-flex flex-row justify-content-between mt-5 py-5">
@@ -102,7 +102,7 @@
 
         <div id="modal-container"></div>
 
-        <input type="submit" onclick="location.href='authentication.html'"
+        <input type="submit" onclick="checkToken()"
           class="btn btn-primary btn-md button-advance px-3" value="Próximo passo" id="btn-sign">
       </div>
 
@@ -113,6 +113,7 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://livejs.com/live.js"></script>
+    <script src="../assets/js/randomCodeGenerator.js"></script>
 
 </body>
 
