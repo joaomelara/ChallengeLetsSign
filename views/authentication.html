@@ -13,7 +13,7 @@
     <link rel="icon" href="https://www.letssign.com.br/wp-content/uploads/2023/06/fav-sign.svg" sizes="192x192" />
 </head>
 
-<body class="d-flex flex-column">
+<body onload="loadEmail()" class="d-flex flex-column">
     <header>
         <nav class="navbar navbar-light bg-white fiscutNav px-5">
             <a class="navbar-brand" href="#">
@@ -62,7 +62,7 @@
                 </li>
                 <li>
                     <div class="nav-link py-4 rounded-0">
-                        <p class="small-sidebar-text mb-2">suspicious.porcupine379@p...</p>
+                        <p class="small-sidebar-text mb-2 emailField" ></p>
                         <p class="text-white sidebar-text mt-2">Assinar como parte</p>
                     </div>
                 </li>
@@ -113,7 +113,7 @@
 
 
             <div class="d-flex flex-row justify-content-between mt-5 py-5">
-                <input type="submit" onclick="location.href='index.html'"
+                <input type="submit" onclick="location.href='tokenVerification.html'"
                     class="btn btn-secondary button-back btn-md px-3" value="Voltar">
 
                 <input type="submit" onclick="location.href='authentication.html'"
@@ -171,6 +171,7 @@
             integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
             crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://livejs.com/live.js"></script>
+        <script type="text/javascript" src="../assets/js/loadInformation.js"></script>
 
 </body>
 
