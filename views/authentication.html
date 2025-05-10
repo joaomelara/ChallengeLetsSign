@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/css/globals.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <title>LetsSign - Assinando documento</title>
+    <script src="https://kit.fontawesome.com/453d893007.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="icon" href="https://www.letssign.com.br/wp-content/uploads/2023/06/fav-sign.svg" sizes="32x32" />
@@ -21,7 +22,7 @@
             </a>
             <div class="d-flex align-items-center">
                 <span class="me-2">Ambiente seguro LetsSign</span>
-                <img src="../assets/images/shieldIcon.png" alt="shieldIcon" />
+                <i class="fa-solid fa-shield-halved fa-xl" style="color: #2cd989;"></i>
             </div>
         </nav>
     </header>
@@ -30,20 +31,17 @@
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
                 <li class="nav-item">
                     <a href="" class="nav-link py-4 pt-5 rounded-0">
-                        <img class="genericIcon" src="../assets/images/downloadDocIcon.png"
-                            alt="Download document icon." />
+                        <i class="fa-solid fa-cloud-arrow-down fa-lg" style="color: #ffffff;"></i>
                     </a>
                 </li>
                 <li>
                     <div class="nav-link py-4 rounded-0">
-                        <img class="genericIcon" src="../assets/images/signIcon.png"
-                            alt="Check if signed document icon." />
+                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #ffffff;"></i>
                     </div>
                 </li>
                 <li>
-                    <div class="nav-link py-4 rounded-0">
-                        <img class="arrow-icon" src="../assets/images/accountArrowIcon.png"
-                            alt="Arrow pointing to information about user." />
+                    <div class="nav-link py-4 mt-1 rounded-0">
+                        <i class="fa-solid fa-arrow-right fa-lg" style="color: #24d3fe;"></i>
                     </div>
                 </li>
             </ul>
@@ -62,7 +60,7 @@
                 </li>
                 <li>
                     <div class="nav-link py-4 rounded-0">
-                        <p class="small-sidebar-text mb-2 emailField" ></p>
+                        <p class="small-sidebar-text mb-2 emailField"></p>
                         <p class="text-white sidebar-text mt-2">Assinar como parte</p>
                     </div>
                 </li>
@@ -83,7 +81,7 @@
             </p>
 
             <div class="loading-bar">
-                <div class="loading-progress2"></div>
+                <div class="loading-progress3"></div>
             </div>
 
             <div class="emptySpace"></div>
@@ -92,23 +90,25 @@
 
             <div class="row">
                 <div class="col-sm-6">
-                        <div class="card text-center w-100" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalCamera">
-                            <div class="card-body">
-                                <img src="../assets/images/laptopIcon.png" alt="Computer icon" class="authIcons" />
-                                <p class="descriptionLetsSign">Usar dispositivo atual</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card text-center w-100" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalOutro">
-                            <div class="card-body">
-                                <img src="../assets/images/phoneIcon.png" alt="Smartphone icon" class="authIcons" />
-                                <p class="descriptionLetsSign">Usar outro dispositivo</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
+                        <div class="card text-center w-100" style="cursor: pointer;" data-bs-toggle="modal"
+                        data-bs-target="#modalCamera">
+                                <div class="card-body">
+                                        <i class="fa-solid fa-laptop fa-auth-icon"></i>
+                                        <p class="attentionLetsSign mt-4">Usar dispositivo atual</p>
+                                    </div>
+                            </div>
+                </div>
+                <div class="col-sm-6">
+                        <div class="card text-center w-100" style="cursor: pointer;" data-bs-toggle="modal"
+                        data-bs-target="#modalOutro">
+                                <div class="card-body">
+                                        <i class="fa-solid fa-mobile-screen-button fa-auth-icon"></i>
+                                        <p class="attentionLetsSign mt-4">Usar outro dispositivo</p>
+                                    </div>
+                            </div>
+                </div>
+
+
             </div>
 
 
@@ -125,43 +125,45 @@
         <!-- Modal Usar Dispositivo Atual -->
         <div class="modal fade" id="modalCamera" tabindex="-1" aria-labelledby="modalCameraLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="modalCameraLabel">Captura de Foto</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCameraLabel">Captura de Foto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <!-- Preview do vídeo -->
+                        <video id="cameraStream" autoplay playsinline width="100%" style="max-height: 400px;"></video>
+                        <canvas id="photoCanvas" class="d-none" width="640" height="480"></canvas>
+
+                        <!-- Botões -->
+                        <div class="mt-4">
+                            <button id="btnCapture" class="btn btn-primary">Tirar Foto</button>
+                            <button id="btnConfirm"
+                                class="btn btn-secondary button-back btn-md px-3 d-none">Confirmar</button>
+                            <button id="btnRetry"
+                                class="btn btn-primary btn-md button-advance px-3 d-none">Refazer</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body text-center">
-                <!-- Preview do vídeo -->
-                <video id="cameraStream" autoplay playsinline width="100%" style="max-height: 400px;"></video>
-                <canvas id="photoCanvas" class="d-none" width="640" height="480"></canvas>
-        
-                <!-- Botões -->
-                <div class="mt-4">
-                    <button id="btnCapture" class="btn btn-primary">Tirar Foto</button>
-                    <button id="btnConfirm" class="btn btn-secondary button-back btn-md px-3 d-none">Confirmar</button>
-                    <button id="btnRetry" class="btn btn-primary btn-md button-advance px-3 d-none">Refazer</button>
-                </div>
-                </div>
-            </div>
             </div>
         </div>
-        
+
         <!-- Modal Usar Outro Dispositivo -->
         <div class="modal fade" id="modalOutro" tabindex="-1" aria-labelledby="modalOutroLabel" aria-hidden="true">
             <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="modalOutroLabel">Escaneie com outro dispositivo</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalOutroLabel">Escaneie com outro dispositivo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p>Use a câmera de outro dispositivo para escanear:</p>
+                        <img id="qrCode" alt="QR Code aleatório" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
                 </div>
-                <div class="modal-body text-center">
-                <p>Use a câmera de outro dispositivo para escanear:</p>
-                <img id="qrCode" alt="QR Code aleatório" />
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                </div>
-            </div>
             </div>
         </div>
 

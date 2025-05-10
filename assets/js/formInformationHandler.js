@@ -26,8 +26,11 @@ function checkForm() {
             return false;
         } else {
             let currentDate = new Date();
-            if (new Date(birthdate) > currentDate || new Date(birthdate) < new Date("1900-01-01" || pDocument.length < 11)) {
-                alert("Dados inválidos.");
+            if (new Date(birthdate) > currentDate || new Date(birthdate) < new Date("1900-01-01")) {
+                alert("Data inválida.");
+                return false;
+            } else if (pDocument.length < 14){
+                alert("CPF inválido.");
                 return false;
             } else {
                 const formData = {
@@ -39,6 +42,7 @@ function checkForm() {
 
                 // Store the form data in local storage
                 localStorage.setItem("formData", JSON.stringify(formData));
+                
 
                 return true;
             }
