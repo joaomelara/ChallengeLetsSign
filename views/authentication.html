@@ -13,7 +13,7 @@
     <link rel="icon" href="https://www.letssign.com.br/wp-content/uploads/2023/06/fav-sign.svg" sizes="192x192" />
 </head>
 
-<body class="d-flex flex-column">
+<body onload="loadEmail()" class="d-flex flex-column">
     <header>
         <nav class="navbar navbar-light bg-white fiscutNav px-5">
             <a class="navbar-brand" href="#">
@@ -62,7 +62,7 @@
                 </li>
                 <li>
                     <div class="nav-link py-4 rounded-0">
-                        <p class="small-sidebar-text mb-2">suspicious.porcupine379@p...</p>
+                        <p class="small-sidebar-text mb-2 emailField" ></p>
                         <p class="text-white sidebar-text mt-2">Assinar como parte</p>
                     </div>
                 </li>
@@ -92,26 +92,28 @@
 
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <img src="../assets/images/laptopIcon.png" alt="Computer icon" class="authIcons" />
-                            <p class="descriptionLetsSign">Usar dispositivo atual</p>
-                        </div>
+                        <div class="card text-center w-100" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalCamera">
+                            <div class="card-body">
+                                <img src="../assets/images/laptopIcon.png" alt="Computer icon" class="authIcons" />
+                                <p class="descriptionLetsSign">Usar dispositivo atual</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <img src="../assets/images/phoneIcon.png" alt="Smartphone icon" class="authIcons" />
-                            <p class="descriptionLetsSign">Usar outro dispositivo</p>
-                        </div>
+                    <div class="col-sm-6">
+                        <div class="card text-center w-100" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalOutro">
+                            <div class="card-body">
+                                <img src="../assets/images/phoneIcon.png" alt="Smartphone icon" class="authIcons" />
+                                <p class="descriptionLetsSign">Usar outro dispositivo</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    
+                    
             </div>
 
 
             <div class="d-flex flex-row justify-content-between mt-5 py-5">
-                <input type="submit" onclick="location.href='index.html'"
+                <input type="submit" onclick="location.href='tokenVerification.html'"
                     class="btn btn-secondary button-back btn-md px-3" value="Voltar">
 
                 <input type="submit" onclick="location.href='authentication.html'"
@@ -120,11 +122,56 @@
 
         </div>
 
+        <!-- Modal Usar Dispositivo Atual -->
+        <div class="modal fade" id="modalCamera" tabindex="-1" aria-labelledby="modalCameraLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="modalCameraLabel">Captura de Foto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-center">
+                <!-- Preview do vídeo -->
+                <video id="cameraStream" autoplay playsinline width="100%" style="max-height: 400px;"></video>
+                <canvas id="photoCanvas" class="d-none" width="640" height="480"></canvas>
+        
+                <!-- Botões -->
+                <div class="mt-4">
+                    <button id="btnCapture" class="btn btn-primary">Tirar Foto</button>
+                    <button id="btnConfirm" class="btn btn-secondary button-back btn-md px-3 d-none">Confirmar</button>
+                    <button id="btnRetry" class="btn btn-primary btn-md button-advance px-3 d-none">Refazer</button>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Modal Usar Outro Dispositivo -->
+        <div class="modal fade" id="modalOutro" tabindex="-1" aria-labelledby="modalOutroLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="modalOutroLabel">Escaneie com outro dispositivo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                <p>Use a câmera de outro dispositivo para escanear:</p>
+                <img id="qrCode" alt="QR Code aleatório" />
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
 
+        <script src="../assets/js/videoGenerator.js"></script>
+        <script src="../assets/js/randomQrCode.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
             crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://livejs.com/live.js"></script>
+        <script type="text/javascript" src="../assets/js/loadInformation.js"></script>
 
 </body>
 

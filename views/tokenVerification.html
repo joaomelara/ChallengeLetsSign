@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../assets/css/globals.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <title>LetsSign - Assinando documento</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link rel="icon" href="https://www.letssign.com.br/wp-content/uploads/2023/06/fav-sign.svg" sizes="32x32" />
+  <link rel="icon" href="https://www.letssign.com.br/wp-content/uploads/2023/06/fav-sign.svg" sizes="192x192" />
+</head>
+
+<body onload="loadEmail()" class="d-flex flex-column">
+  <header>
+    <nav class="navbar navbar-light bg-white fiscutNav px-5">
+      <a class="navbar-brand" href="#">
+        <img class="genericIcon" src="../assets/images/FiscutLogo.png" alt="genericIcon" />
+      </a>
+      <div class="d-flex align-items-center">
+        <span class="me-2">Ambiente seguro LetsSign</span>
+        <img src="../assets/images/shieldIcon.png" alt="shieldIcon" />
+      </div>
+    </nav>
+  </header>
+  <main class="d-flex flex-row">
+    <div class="d-flex flex-column flex-shrink-0 primaryColor sidebar" style="width: 4.5rem">
+      <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+        <li class="nav-item">
+          <a href="" class="nav-link py-4 pt-5 rounded-0">
+            <img class="genericIcon" src="../assets/images/downloadDocIcon.png" alt="Download document icon." />
+          </a>
+        </li>
+        <li>
+          <div class="nav-link py-4 rounded-0">
+            <img class="genericIcon" src="../assets/images/signIcon.png" alt="Check if signed document icon." />
+          </div>
+        </li>
+        <li>
+          <div class="nav-link py-4 rounded-0">
+            <img class="arrow-icon" src="../assets/images/accountArrowIcon.png"
+              alt="Arrow pointing to information about user." />
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="d-flex flex-column flex-shrink-0 secondaryColor sidebar">
+      <ul class="d-flex sidebar nav nav-pills nav-flush flex-column mb-auto px-5">
+        <li class="nav-item">
+          <div class="nav-link py-4 pt-5 rounded-0">
+            <span class="text-white sidebar-text">Baixar documento</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-link py-4 rounded-0">
+            <span class="text-white sidebar-text">0/1 Assinaturas</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-link py-4 rounded-0">
+            <p class="small-sidebar-text emailField mb-2" ></p>
+            <p class="text-white sidebar-text mt-2">Assinar como parte</p>
+          </div>
+        </li>
+        <li class="mt-auto">
+          <div class="nav-link mb-5 rounded-0">
+            <img class="letsSignLogo mb-5" src="../assets/images/LetsSignIcon.png" alt="LetsSign logo" />
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w-25 m-5 token-main">
+      <h2 class="titleLetsSign">Assinatura para Fiscut</h2>
+      <p class="descriptionLetsSign">
+        Bem-vindo(a) à aprovação eletrônica de documentos do
+        <span style="color: #8654FF; font-weight: 500; ">LetsSign</span>. <br />
+        Os próximos passos servirão de guia durante o processo de aprovação.
+      </p>
+
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+
+      <div class="emptySpace"></div>
+      <p class="mt-5 descriptionLetsSign">Enviamos um token por: <span
+          style="color: #8654FF; font-weight: 500; " class="emailField" ></span></p>
+      <p class="mt-5 attentionLetsSign">Insira o Token recebido no campo abaixo</p>
+      <form action="authentication.html" onsubmit="return checkToken()">
+        <input type="text" class="simpleInput text-center mt-4" id="tokenInput" />
+
+        <p class="mt-4 descriptionLetsSign">
+          Não recebeu ou precisa de um novo token?
+          <a href="#" onclick="makeToken(10)"
+            style="color: #8654FF; font-weight: 500; text-decoration: none; ">Reenviar</a>
+        </p>
+
+        <div class="d-flex flex-row justify-content-between mt-5 py-5">
+          <input type="button" onclick="window.location.href='index.html'"
+            class="btn btn-secondary button-back btn-md px-3" value="Voltar">
+
+
+          <div id="modal-container"></div>
+
+          <input required type="submit" class="btn btn-primary btn-md button-advance px-3" value="Próximo passo" id="btn-sign">
+      </form>
+    </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
+    <script src="../assets/js/randomCodeGenerator.js"></script>
+    <script src="../assets/js/loadInformation.js"></script>
+
+</body>
+
+</html>
