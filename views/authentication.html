@@ -120,9 +120,6 @@
             <div class="d-flex flex-row justify-content-between mt-5 py-5">
                 <input type="submit" onclick="location.href='tokenVerification.html'"
                     class="btn btn-secondary button-back btn-md px-3" value="Voltar">
-
-                <input type="submit" onclick="location.href='authentication.html'"
-                    class="btn btn-primary btn-md button-advance px-3" value="Próximo passo" id="btn-sign">
             </div>
 
         </div>
@@ -140,15 +137,18 @@
                         <video id="cameraStream" autoplay playsinline width="100%" style="max-height: 400px;"></video>
                         <canvas id="photoCanvas" class="d-none" width="640" height="480"></canvas>
 
-                        <!-- Botões -->
-                        <div class="modal-footer justify-content-between mt-4">
 
-                            <button id="btnConfirm"
-                                class="btn btn-secondary button-back btn-md px-3 d-none">Confirmar</button>
-                            <button id="btnRetry"
-                                class="btn btn-primary btn-md button-advance px-3 d-none">Refazer</button>
-                            <button id="btnCapture" class="btn btn-primary">Tirar Foto</button>
+                        <div class="modal-footer mt-4 d-flex">
+
+                                <button id="btnConfirm" class="btn btn-secondary button-back btn-md d-none mr-auto"
+                                data-bs-dismiss="modal" data-bs-toggle="modal"
+                                data-bs-target="#modalSucesso">Confirmar</button>
+                                <button id="btnRetry"
+                                class="btn btn-primary button-advance d-none ml-auto">Refazer</button>
+
+                                <button id="btnCapture" class="btn btn-primary">Tirar Foto</button>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -179,11 +179,38 @@
                             aria-label="Alerta">
                             <i class="fas fa-exclamation-triangle"></i>
                         </button>
-                        <button type="button" class="btn btn-secondary">Prosseguir</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal"
+                            data-bs-target="#modalSucesso">Prosseguir</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Modal de Sucesso -->
+        <div class="modal fade" id="modalSucesso" tabindex="-1" aria-labelledby="modalSucessoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-4 rounded-4 shadow-lg border-0">
+
+                    <div class="modal-header border-0 justify-content-center">
+                        <div class="text-center">
+                            <i class="fas fa-check-circle text-success fa-3x mb-2"></i>
+                            <h5 class="modal-title fw-bold" id="modalSucessoLabel">Sucesso!</h5>
+                        </div>
+                    </div>
+
+                    <div class="modal-body text-center">
+                        <p class="mb-4 fs-5">Sua foto foi registrada com sucesso!</p>
+                        <button type="button" class="btn btn-success px-4 py-2 fw-semibold rounded-pill"
+                            onclick="window.location.href='proximoPasso.html'">
+                            Próximo passo
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
 
         <script src="../assets/js/videoGenerator.js"></script>
         <script src="../assets/js/randomQrCode.js"></script>
