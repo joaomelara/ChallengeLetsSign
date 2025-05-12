@@ -56,7 +56,6 @@ btnConfirm.addEventListener('click', () => {
     const dataUrl = canvas.toDataURL('image/png');
     console.log('Foto confirmada (base64):', dataUrl);
     // Aqui você pode enviar para o servidor ou prosseguir no fluxo.
-    alert('Foto confirmada!');
     bootstrap.Modal.getInstance(document.getElementById('modalCamera')).hide();
     stream.getTracks().forEach(track => track.stop());
 });
