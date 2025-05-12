@@ -126,29 +126,31 @@
 
         <!-- Modal Usar Dispositivo Atual -->
         <div class="modal fade" id="modalCamera" tabindex="-1" aria-labelledby="modalCameraLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-dialog-centered custom-modal-size">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalCameraLabel">Captura de Foto</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                     </div>
-                    <div class="modal-body text-center">
-                        <!-- Preview do vídeo -->
-                        <video id="cameraStream" autoplay playsinline width="100%" style="max-height: 400px;"></video>
-                        <canvas id="photoCanvas" class="d-none" width="640" height="480"></canvas>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-md-10 text-center">
+                                    <!-- Vídeo responsivo -->
+                                    <video id="cameraStream" autoplay playsinline class="w-100 mb-3"
+                                        style="height: auto;"></video>
+                                    <canvas id="photoCanvas" class="d-none w-100 mb-3" style="height: auto;"></canvas>
 
-
-                        <div class="modal-footer mt-4 d-flex">
-
-                                <button id="btnConfirm" class="btn btn-secondary button-back btn-md d-none mr-auto"
-                                data-bs-dismiss="modal" data-bs-toggle="modal"
-                                data-bs-target="#modalSucesso">Confirmar</button>
-                                <button id="btnRetry"
-                                class="btn btn-primary button-advance d-none ml-auto">Refazer</button>
-
-                                <button id="btnCapture" class="btn btn-primary">Tirar Foto</button>
+                                    <!-- Botões -->
+                                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                                        <button id="btnCapture" class="btn btn-primary">Tirar Foto</button>
+                                        <button id="btnRetry" class="btn btn-secondary d-none">Refazer</button>
+                                        <button id="btnConfirm" class="btn btn-success d-none" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#modalSucesso">Confirmar</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -219,6 +221,7 @@
             crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://livejs.com/live.js"></script>
         <script type="text/javascript" src="../assets/js/loadInformation.js"></script>
+        <script type="text/javascript" src="../assets/js/configModalSucess.js"></script>
 
 </body>
 
