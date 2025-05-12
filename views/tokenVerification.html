@@ -23,7 +23,7 @@
           <i class="fa-solid fa-bars fa-lg" style="color: #000000;"></i>
         </a>
         <a class="navbar-brand" href="#">
-          <img class="genericIcon pb-1" src="../assets/images/FiscutLogo.png" alt="genericIcon" />
+          <img class="genericIcon pb-2" src="../assets/images/FiscutLogo.png" alt="genericIcon" />
         </a>
       </div>
       <div class="d-flex align-items-center justify-content-center">
@@ -32,116 +32,124 @@
       </div>
     </nav>
   </header>
-  <main class="d-flex flex-row mt-5">
-    <div class="d-none d-md-flex flex-column flex-shrink-0 primaryColor sidebarDark">
-      <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-        <li class="nav-item">
-          <a href="" class="nav-link py-4 pt-5 rounded-0">
-            <i class="fa-solid fa-cloud-arrow-down fa-lg" style="color: #ffffff;"></i>
-          </a>
-        </li>
-        <li>
-          <div class="nav-link py-4 rounded-0">
-            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #ffffff;"></i>
-          </div>
-        </li>
-        <li>
-          <div class="nav-link py-4 mt-1 rounded-0">
-            <i class="fa-solid fa-arrow-right fa-lg" style="color: #24d3fe;"></i>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="d-none d-md-flex flex-column flex-shrink-0 secondaryColor sidebarLight">
-      <ul class="d-flex nav nav-pills nav-flush flex-column mb-auto px-5">
-        <li class="nav-item">
-          <div class="nav-link py-4 pt-5 rounded-0">
-            <span class="text-white sidebar-text">Baixar documento</span>
-          </div>
-        </li>
-        <li>
-          <div class="nav-link py-4 rounded-0">
-            <span class="text-white sidebar-text">0/1 Assinaturas</span>
-          </div>
-        </li>
-        <li>
-          <div class="nav-link py-4 rounded-0">
-            <p class="small-sidebar-text mb-2 emailField"></p>
-            <p class="text-white sidebar-text mt-2">Assinar como parte</p>
-          </div>
-        </li>
-        <li class="mt-auto">
-          <div class="nav-link rounded-0">
-            <img class="letsSignLogoSidebar" src="../assets/images/LetsSignIcon.png" alt="LetsSign logo" />
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="m-5 flex mainContent">
-      <h2 class="titleLetsSign">Assinatura para Fiscut</h2>
-      <p class="descriptionLetsSign">
-        Bem-vindo(a) à aprovação eletrônica de documentos do
-        <span style="color: #8654FF; font-weight: 500; ">LetsSign</span>. <br />
-        Os próximos passos servirão de guia durante o processo de aprovação.
-      </p>
-
-      <div class="loading-bar">
-        <div class="loading-progress"></div>
+  <main class="d-flex flex-row">
+    <main class="d-flex flex-row mt-5">
+      <div class="d-flex flex-row sidebar-area fixed-top">
+        <div class="d-none d-md-flex flex-column flex-shrink-0 primaryColor sidebarDark">
+          <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+            <li class="nav-item">
+              <a href="" class="nav-link py-4 pt-5 rounded-0">
+                <i class="fa-solid fa-cloud-arrow-down fa-lg" style="color: #ffffff;"></i>
+              </a>
+            </li>
+            <li>
+              <div class="nav-link py-4 rounded-0">
+                <i class="fa-solid fa-pen-to-square fa-lg" style="color: #ffffff;"></i>
+              </div>
+            </li>
+            <li>
+              <div class="nav-link py-4 mt-1 rounded-0">
+                <i class="fa-solid fa-arrow-right fa-lg" style="color: #24d3fe;"></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="d-none d-md-flex flex-column flex-shrink-0 secondaryColor sidebarLight">
+          <ul class="d-flex nav nav-pills nav-flush flex-column mb-auto px-5">
+            <li class="nav-item">
+              <div class="nav-link py-4 pt-5 rounded-0">
+                <span class="text-white sidebar-text">Baixar documento</span>
+              </div>
+            </li>
+            <li>
+              <div class="nav-link py-4 rounded-0">
+                <span class="text-white sidebar-text">0/1 Assinaturas</span>
+              </div>
+            </li>
+            <li>
+              <div class="nav-link py-4 rounded-0">
+                <p class="small-sidebar-text mb-2 emailField"></p>
+                <p class="text-white sidebar-text mt-2">Assinar como parte</p>
+              </div>
+            </li>
+            <li class="mt-auto">
+              <div class="nav-link rounded-0">
+                <img class="letsSignLogoSidebar" src="../assets/images/LetsSignIcon.png" alt="LetsSign logo" />
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div class="emptySpace"></div>
-      <p class="mt-5 descriptionLetsSign">Enviamos um token por: <span style="color: #8654FF; font-weight: 500; "
-          class="emailField"></span></p>
-      <p class="mt-5 attentionLetsSign">Insira o Token recebido no campo abaixo</p>
-      <form action="authentication.html" onsubmit="return checkToken()">
-        <input type="text" class="simpleInput text-center mt-4" id="tokenInput" />
-
-        <p class="mt-4 descriptionLetsSign">
-          Não recebeu ou precisa de um novo token?
-          <a href="#" onclick="makeToken(10)"
-            style="color: #8654FF; font-weight: 500; text-decoration: none; ">Reenviar</a>
+      <div class="flex mainContent">
+        <h2 class="titleLetsSign">Assinatura para Fiscut</h2>
+        <p class="descriptionLetsSign">
+          Bem-vindo(a) à aprovação eletrônica de documentos do
+          <span style="color: #8654FF; font-weight: 500; ">LetsSign</span>. <br />
+          Os próximos passos servirão de guia durante o processo de aprovação.
         </p>
 
-        <div class="d-flex flex-row justify-content-between mt-5 py-5">
-          <input type="button" onclick="window.location.href='index.html'"
-            class="btn btn-secondary button-back btn-md px-3" value="Voltar">
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+
+        <div class="emptySpace"></div>
+        <p class="mt-5 descriptionLetsSign">Enviamos um token por: <span style="color: #8654FF; font-weight: 500; "
+            class="emailField"></span></p>
+        <p class="mt-5 attentionLetsSign">Insira o Token recebido no campo abaixo</p>
+        <form action="authentication.html" onsubmit="return checkToken()">
+          <input type="text" class="simpleInput text-center mt-4" id="tokenInput" />
+
+          <p class="mt-4 descriptionLetsSign">
+            Não recebeu ou precisa de um novo token?
+            <a href="#" onclick="makeToken(10)"
+              style="color: #8654FF; font-weight: 500; text-decoration: none; ">Reenviar</a>
+          </p>
+
+          <div class="d-flex flex-row justify-content-between mt-5 py-5">
+            <input type="button" onclick="window.location.href='index.html'"
+              class="btn btn-secondary button-back btn-md px-3" value="Voltar">
 
 
-          <div id="modal-container"></div>
+            <div id="modal-container"></div>
 
-          <input required type="submit" class="btn btn-primary btn-md button-advance px-3" value="Próximo passo"
-            id="btn-sign">
-      </form>
-    </div>
-
-    </div>
-
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header primaryColor">
-        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-          <i class="fa-solid fa-xmark fa-xl" style="color: #FFF;"></i>
-        </a>
+            <input required type="submit" class="btn btn-primary btn-md button-advance px-3" value="Próximo passo"
+              id="btn-sign">
+        </form>
       </div>
-      <div class="offcanvas-body p-4 primaryColor d-flex flex-column justify-content-between">
-        <a href="" class="py-4 rounded-0">
-          <i class="fa-solid fa-cloud-arrow-down fa-lg me-3" style="color: #ffffff;"></i>
-          <span class="text-white sidebar-text">Baixar documento</span>
-        </a>
-        <div class="py-4 rounded-0">
-          <i class="fa-solid fa-pen-to-square fa-lg me-4" style="color: #ffffff;"></i>
-          <span class="text-white sidebar-text">0/1 Assinaturas</span>
+
+      </div>
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header primaryColor">
+          <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <i class="fa-solid fa-xmark fa-xl" style="color: #FFF;"></i>
+          </a>
         </div>
-        <div class="pt-4 rounded-0">
-          <i class="fa-solid fa-arrow-right fa-lg me-4" style="color: #24d3fe;"></i>
-          <span class="text-white sidebar-text">Assinar como parte</span>
-        </div>
-        <div class="mt-auto">
-          <img class="letsSignLogo mb-5" src="../assets/images/LetsSignIcon.png" alt="LetsSign logo" />
+        <div class="offcanvas-body p-4 primaryColor d-flex flex-column justify-content-between">
+          <a href="" class="py-4 rounded-0">
+            <i class="fa-solid fa-cloud-arrow-down fa-lg me-3" style="color: #ffffff;"></i>
+            <span class="text-white sidebar-text">Baixar documento</span>
+          </a>
+          <div class="py-4 rounded-0">
+            <i class="fa-solid fa-pen-to-square fa-lg me-4" style="color: #ffffff;"></i>
+            <span class="text-white sidebar-text">0/1 Assinaturas</span>
+          </div>
+          <div class="pt-4 align-items-center d-flex flex-row rounded-0">
+            <i class="fa-solid fa-arrow-right fa-lg me-4" style="color: #24d3fe;"></i>
+            <div  class="d-flex flex-column">
+              <span class="small-sidebar-text mb-2 emailField"></span>
+              <span class="text-white sidebar-text">Assinar como parte</span>
+            </div>
+          </div>
+          <div class="mt-auto">
+            <img class="letsSignLogo mb-5" src="../assets/images/LetsSignIcon.png" alt="LetsSign logo" />
+          </div>
         </div>
       </div>
-    </div>
 
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
