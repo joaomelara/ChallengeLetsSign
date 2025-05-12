@@ -1,11 +1,27 @@
+a {
+    text-decoration: none !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body spans the full height of the viewport */
+}
+
+main {
+    display: flex;
+    flex: 1; /* Allows the main content to grow and fill available space */
+}
+
 .fiscutNav {
     box-shadow: 0 4px 2px -2px #cbcbcb;
     padding-left: 3rem !important;
     padding-right: 3rem !important;
 }
 
-.mainContent{
+.mainContent {
     width: 60%;
+    max-width: 1000px;
 }
 
 .genericIcon {
@@ -22,6 +38,14 @@
     max-width: 100%;
 }
 
+.letsSignLogoSidebar {
+    height: auto;
+    max-height: 48px;
+    width: auto;
+    max-width: 100%;
+    margin-top: 50vh !important;
+}
+
 .primaryColor {
     background-color: #35326F;
 }
@@ -36,8 +60,19 @@
     font-weight: 500;
 }
 
-.sidebar {
-    min-height: 100vh;
+.sidebarDark {
+    display: flex;
+    flex-direction: column;
+    min-width: 4.5rem;
+    max-width: 4.5rem;
+    flex: 1;
+}
+
+.sidebarLight {
+    display: flex;
+    flex-direction: column;
+    min-width: 15rem;
+    max-width: 17rem;
 }
 
 .sidebar-text {
@@ -136,22 +171,44 @@
     color: #35326F;
 }
 
+@media (max-width: 1052px) {
+
+    .fa-auth-icon {
+        font-size: 80px;
+    }
+
+    .titleLetsSign {
+        font-size: 20px;
+    }
+
+    .descriptionLetsSign {
+        font-size: 15px;
+    }
+
+    .attentionLetsSign {
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 768px) {
 
     .fiscutNav {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
+
     .genericIcon {
         height: auto;
         max-height: 26px;
         width: auto;
         max-width: 100%;
     }
-    .secureEnvironmentText{
+
+    .secureEnvironmentText {
         display: none;
     }
-    .mainContent{
+
+    .mainContent {
         width: 100%;
     }
 

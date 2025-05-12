@@ -16,7 +16,7 @@
 
 <body onload="loadAll()" class="d-flex flex-column">
     <header>
-        <nav class="navbar navbar-light bg-white fiscutNav align-items-center">
+        <nav class="navbar navbar-light fixed-top bg-white fiscutNav align-items-center">
             <div class="d-flex align-items-center">
                 <a class=" d-block d-md-none me-3" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                     aria-controls="offcanvasExample">
@@ -32,8 +32,8 @@
             </div>
         </nav>
     </header>
-    <main class="d-flex flex-row">
-        <div class="d-none d-md-flex flex-column flex-shrink-0 primaryColor sidebar" style="width: 4.5rem">
+    <main class="d-flex flex-row mt-5">
+        <div class="d-none d-md-flex flex-column flex-shrink-0 primaryColor sidebarDark">
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
                 <li class="nav-item">
                     <a href="" class="nav-link py-4 pt-5 rounded-0">
@@ -52,8 +52,8 @@
                 </li>
             </ul>
         </div>
-        <div class="d-none d-md-flex flex-column flex-shrink-0 secondaryColor sidebar">
-            <ul class="d-flex sidebar nav nav-pills nav-flush flex-column mb-auto px-5">
+        <div class="d-none d-md-flex flex-column flex-shrink-0 secondaryColor sidebarLight">
+            <ul class="d-flex nav nav-pills nav-flush flex-column mb-auto px-5">
                 <li class="nav-item">
                     <div class="nav-link py-4 pt-5 rounded-0">
                         <span class="text-white sidebar-text">Baixar documento</span>
@@ -71,7 +71,7 @@
                 </li>
                 <li class="mt-auto">
                     <div class="nav-link rounded-0">
-                        <img class="letsSignLogo" src="../assets/images/LetsSignIcon.png" alt="LetsSign logo" />
+                        <img class="letsSignLogoSidebar" src="../assets/images/LetsSignIcon.png" alt="LetsSign logo" />
                     </div>
                 </li>
             </ul>
@@ -120,14 +120,13 @@
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
             aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header primaryColor">
-                <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-                    aria-controls="offcanvasExample">
+                <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                     <i class="fa-solid fa-xmark fa-xl" style="color: #FFF;"></i>
                 </a>
             </div>
             <div class="offcanvas-body p-4 primaryColor d-flex flex-column justify-content-between">
-                <a href="" class="py-4 pt-5 rounded-0">
-                    <i class="fa-solid fa-cloud-arrow-down fa-lg me-4" style="color: #ffffff;"></i>
+                <a href="" class="py-4 rounded-0">
+                    <i class="fa-solid fa-cloud-arrow-down fa-lg me-3" style="color: #ffffff;"></i>
                     <span class="text-white sidebar-text">Baixar documento</span>
                 </a>
                 <div class="py-4 rounded-0">
