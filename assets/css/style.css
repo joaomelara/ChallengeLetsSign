@@ -166,6 +166,21 @@ main {
     max-width: 100%;
 }
 
+.custom-modal-size {
+    max-width: 700px; 
+    width: 100%;
+}
+
+  .loading-box {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .modal-backdrop.show {
+    opacity: 0.7;
+    background-color: #000;
+  }
+
 .fa-auth-icon {
     font-size: 110px;
     color: #35326F;
