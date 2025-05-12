@@ -5,12 +5,17 @@ a {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures the body spans the full height of the viewport */
+    min-height: 100vh; 
 }
 
 main {
     display: flex;
-    flex: 1; /* Allows the main content to grow and fill available space */
+    flex: 1;
+    z-index: 1;
+}
+
+header{
+    z-index: 99;
 }
 
 .fiscutNav {
@@ -22,6 +27,8 @@ main {
 .mainContent {
     width: 60%;
     max-width: 1000px;
+    margin: 3rem;
+    margin-left: 24.5rem;
 }
 
 .genericIcon {
@@ -43,7 +50,7 @@ main {
     max-height: 48px;
     width: auto;
     max-width: 100%;
-    margin-top: 50vh !important;
+    margin-top: 45vh !important;
 }
 
 .primaryColor {
@@ -60,19 +67,27 @@ main {
     font-weight: 500;
 }
 
+.sidebar-area {
+    max-width: 21.5rem  !important;
+}
+
 .sidebarDark {
     display: flex;
     flex-direction: column;
     min-width: 4.5rem;
     max-width: 4.5rem;
+    padding-top: 65px;
     flex: 1;
+    min-height: 100vh;
 }
 
 .sidebarLight {
     display: flex;
     flex-direction: column;
-    min-width: 15rem;
+    min-width: 17rem;
     max-width: 17rem;
+    padding-top: 65px;
+    min-height: 100vh;
 }
 
 .sidebar-text {
@@ -214,7 +229,7 @@ main {
 
     .genericIcon {
         height: auto;
-        max-height: 26px;
+        max-height: 28px;
         width: auto;
         max-width: 100%;
     }
@@ -225,6 +240,56 @@ main {
 
     .mainContent {
         width: 100%;
+        margin: 2rem;
+        margin-left: 2rem;
     }
 
+}
+
+@media (min-height: 900px) {
+    .letsSignLogoSidebar {
+        margin-top: 53.5vh !important;
+    }
+}
+
+@media (max-height: 768px) {
+    .letsSignLogoSidebar {
+        margin-top: 40vh !important;
+    }
+}
+
+@media (max-height: 700px) {
+    .letsSignLogoSidebar {
+        margin-top: 35vh !important;
+    }
+}
+
+@media (max-height: 632px) {
+    .letsSignLogoSidebar {
+        margin-top: 30vh !important;
+    }
+}
+
+@media (max-height: 580px) {
+    .letsSignLogoSidebar {
+        margin-top: 25vh !important;
+    }
+}
+
+@media (max-height: 540px) {
+    .letsSignLogoSidebar {
+        margin-top: 20vh !important;
+    }
+}
+
+@media (max-height: 540px) {
+    .letsSignLogoSidebar {
+        display: none !important;
+    }
+}
+
+@media (max-height: 500px) {
+    .letsSignLogo {
+        display: none !important;
+    }
 }
