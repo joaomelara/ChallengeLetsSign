@@ -1,6 +1,27 @@
+a {
+    text-decoration: none !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body spans the full height of the viewport */
+}
+
+main {
+    display: flex;
+    flex: 1; /* Allows the main content to grow and fill available space */
+}
+
 .fiscutNav {
-    height: 72px;
     box-shadow: 0 4px 2px -2px #cbcbcb;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+}
+
+.mainContent {
+    width: 60%;
+    max-width: 1000px;
 }
 
 .genericIcon {
@@ -17,12 +38,20 @@
     max-width: 100%;
 }
 
+.letsSignLogoSidebar {
+    height: auto;
+    max-height: 48px;
+    width: auto;
+    max-width: 100%;
+    margin-top: 50vh !important;
+}
+
 .primaryColor {
     background-color: #35326F;
 }
 
 .secondaryColor {
-    background-color: #3D3D84;
+    background-color: #3D3D84 !important;
 }
 
 .fiscutNav span {
@@ -31,8 +60,19 @@
     font-weight: 500;
 }
 
-.sidebar {
-    min-height: 100vh;
+.sidebarDark {
+    display: flex;
+    flex-direction: column;
+    min-width: 4.5rem;
+    max-width: 4.5rem;
+    flex: 1;
+}
+
+.sidebarLight {
+    display: flex;
+    flex-direction: column;
+    min-width: 15rem;
+    max-width: 17rem;
 }
 
 .sidebar-text {
@@ -47,90 +87,129 @@
     font-weight: 500;
 }
 
-.titleLetsSign{
+.titleLetsSign {
     color: #353470;
     font-size: 22px;
     font-weight: 400;
 }
 
-.descriptionLetsSign{
+.descriptionLetsSign {
     margin-top: 12px;
     color: #b3b3b3
 }
 
-.attentionLetsSign{
+.attentionLetsSign {
     font-weight: 400;
     color: #5B5A8B;
 }
 
-.loading-bar{
+.loading-bar {
     height: 9px;
     background-color: #FFF;
     width: 100%;
     border-radius: 4.5px;
-    box-shadow: 
-    0 -1px 2px rgba(0, 0, 0, 0.1),  
-    0 2px 4px rgba(0, 0, 0, 0.2);  
+    box-shadow:
+        0 -1px 2px rgba(0, 0, 0, 0.1),
+        0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.loading-progress{
-    height: 100%; 
-    background-color: #2CD989; 
+.loading-progress {
+    height: 100%;
+    background-color: #2CD989;
     border-radius: 4.5px;
     width: 25%;
 }
 
-.loading-progress2{
-    height: 100%; 
-    background-color: #2CD989; 
+.loading-progress2 {
+    height: 100%;
+    background-color: #2CD989;
     border-radius: 4.5px;
     width: 50%;
 }
 
-.loading-progress3{
-    height: 100%; 
-    background-color: #2CD989; 
+.loading-progress3 {
+    height: 100%;
+    background-color: #2CD989;
     border-radius: 4.5px;
     width: 75%;
 }
 
-.token-main{
-    min-width: 100vh;
-}
-
-.emptySpace{
+.emptySpace {
     height: 2%;
     width: 10px;
 }
 
-.simpleInput{
+.simpleInput {
     width: 100%;
     border: 0px;
     border-bottom: 2px solid #8654FF;
 }
 
-.button-advance{
-    background-color: #8654FF!important ;
-    border-color: #8654FF!important;
+.button-advance {
+    background-color: #8654FF !important;
+    border-color: #8654FF !important;
     border-radius: 10px !important;
 
 }
 
-.button-back{
+.button-back {
     border-radius: 10px !important;
     background-color: #5B5A8B !important;
-    border-color: #5B5A8B!important;
+    border-color: #5B5A8B !important;
 
 }
 
-.authIcons{
+.authIcons {
     height: auto;
     max-height: 170px;
     width: auto;
     max-width: 100%;
 }
 
-.fa-auth-icon{
+.fa-auth-icon {
     font-size: 110px;
     color: #35326F;
+}
+
+@media (max-width: 1052px) {
+
+    .fa-auth-icon {
+        font-size: 80px;
+    }
+
+    .titleLetsSign {
+        font-size: 20px;
+    }
+
+    .descriptionLetsSign {
+        font-size: 15px;
+    }
+
+    .attentionLetsSign {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .fiscutNav {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .genericIcon {
+        height: auto;
+        max-height: 26px;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .secureEnvironmentText {
+        display: none;
+    }
+
+    .mainContent {
+        width: 100%;
+    }
+
 }
