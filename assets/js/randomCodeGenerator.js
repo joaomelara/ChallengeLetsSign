@@ -21,6 +21,7 @@ function checkToken() {
     try {
         var token = document.getElementById("tokenInput").value;
         if (token == result && token != "") {
+            localStorage.setItem("authenticated", true);
             return true;
         } else {
             alert("Token incorreto, tente novamente.");

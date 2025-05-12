@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/css/globals.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <title>LetsSign - Assinando documento</title>
+    <script src="https://kit.fontawesome.com/453d893007.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="icon" href="https://www.letssign.com.br/wp-content/uploads/2023/06/fav-sign.svg" sizes="32x32" />
@@ -16,41 +17,44 @@
 
 <body onload="loadEmail()" class="d-flex flex-column">
     <header>
-        <nav class="navbar navbar-light bg-white fiscutNav px-5">
-            <a class="navbar-brand" href="#">
-                <img class="genericIcon" src="../assets/images/FiscutLogo.png" alt="Company logo" />
-            </a>
+        <nav class="navbar fixed-top navbar-light bg-white fiscutNav align-items-center">
             <div class="d-flex align-items-center">
-                <span class="me-2">Ambiente seguro LetsSign</span>
-                <img src="../assets/images/shieldIcon.png" alt="shieldIcon" />
+                <a class=" d-block d-md-none me-3" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                    aria-controls="offcanvasExample">
+                    <i class="fa-solid fa-bars fa-lg" style="color: #000000;"></i>
+                </a>
+                <a class="navbar-brand" href="#">
+                    <img class="genericIcon pb-1" src="../assets/images/FiscutLogo.png" alt="genericIcon" />
+                </a>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+                <span class="me-2 secureEnvironmentText">Ambiente seguro LetsSign</span>
+                <i class="fa-solid fa-shield-halved fa-xl" style="color: #2cd989;"></i>
             </div>
         </nav>
     </header>
-    <main class="d-flex flex-row">
-        <div class="d-flex flex-column flex-shrink-0 primaryColor sidebar" style="width: 4.5rem">
+    <main class="d-flex flex-row mt-5">
+        <div class="d-none d-md-flex flex-column flex-shrink-0 primaryColor sidebarDark">
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
                 <li class="nav-item">
                     <a href="" class="nav-link py-4 pt-5 rounded-0">
-                        <img class="genericIcon" src="../assets/images/downloadDocIcon.png"
-                            alt="Download document icon." />
+                        <i class="fa-solid fa-cloud-arrow-down fa-lg" style="color: #ffffff;"></i>
                     </a>
                 </li>
                 <li>
                     <div class="nav-link py-4 rounded-0">
-                        <img class="genericIcon" src="../assets/images/signIcon.png"
-                            alt="Check if signed document icon." />
+                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #ffffff;"></i>
                     </div>
                 </li>
                 <li>
-                    <div class="nav-link py-4 rounded-0">
-                        <img class="arrow-icon" src="../assets/images/accountArrowIcon.png"
-                            alt="Arrow pointing to information about user." />
+                    <div class="nav-link py-4 mt-1 rounded-0">
+                        <i class="fa-solid fa-arrow-right fa-lg" style="color: #24d3fe;"></i>
                     </div>
                 </li>
             </ul>
         </div>
-        <div class="d-flex flex-column flex-shrink-0 secondaryColor sidebar">
-            <ul class="d-flex sidebar nav nav-pills nav-flush flex-column mb-auto px-5">
+        <div class="d-none d-md-flex flex-column flex-shrink-0 secondaryColor sidebarLight">
+            <ul class="d-flex nav nav-pills nav-flush flex-column mb-auto px-5">
                 <li class="nav-item">
                     <div class="nav-link py-4 pt-5 rounded-0">
                         <span class="text-white sidebar-text">Baixar documento</span>
@@ -68,14 +72,14 @@
                     </div>
                 </li>
                 <li class="mt-auto">
-                    <div class="nav-link mb-5 rounded-0">
-                        <img class="letsSignLogo mb-5" src="../assets/images/LetsSignIcon.png" alt="LetsSign logo" />
+                    <div class="nav-link rounded-0">
+                        <img class="letsSignLogoSidebar" src="../assets/images/LetsSignIcon.png" alt="LetsSign logo" />
                     </div>
                 </li>
             </ul>
         </div>
 
-        <div class="w-25 m-5 token-main">
+        <div class="m-5 flex mainContent">
             <h2 class="titleLetsSign">Assinatura para Fiscut</h2>
             <p class="descriptionLetsSign">
                 Bem-vindo(a) à aprovação eletrônica de documentos do
@@ -84,7 +88,7 @@
             </p>
 
             <div class="loading-bar">
-                <div class="loading-progress2"></div>
+                <div class="loading-progress3"></div>
             </div>
 
             <div class="emptySpace"></div>
@@ -92,28 +96,24 @@
             <div class="emptySpace"></div>
 
             <div class="row">
-                <div class="col-sm-6">
-                        <div class="card text-center w-100" style="cursor: pointer;" data-bs-toggle="modal"
+                <div class="col-12 col-md-6">
+                    <div class="card text-center w-100" style="cursor: pointer;" data-bs-toggle="modal"
                         data-bs-target="#modalCamera">
-                                <div class="card-body">
-                                        <img src="../assets/images/laptopIcon.png" alt="Computer icon"
-                                class="authIcons" />
-                                        <p class="descriptionLetsSign">Usar dispositivo atual</p>
-                                    </div>
-                            </div>
+                        <div class="card-body">
+                            <i class="fa-solid fa-laptop fa-auth-icon"></i>
+                            <p class="attentionLetsSign mt-4">Usar dispositivo atual</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                        <div class="card text-center w-100" style="cursor: pointer;" data-bs-toggle="modal"
+                <div class="col-12 col-md-6 mt-4 mt-md-0">
+                    <div class="card text-center w-100" style="cursor: pointer;" data-bs-toggle="modal"
                         data-bs-target="#modalOutro">
-                                <div class="card-body">
-                                        <img src="../assets/images/phoneIcon.png" alt="Smartphone icon"
-                                class="authIcons" />
-                                        <p class="descriptionLetsSign">Usar outro dispositivo</p>
-                                    </div>
-                            </div>
+                        <div class="card-body">
+                            <i class="fa-solid fa-mobile-screen-button fa-auth-icon"></i>
+                            <p class="attentionLetsSign mt-4">Usar outro dispositivo</p>
+                        </div>
+                    </div>
                 </div>
-
-
             </div>
 
 
@@ -222,6 +222,32 @@
                         </div>
                         <p class="mt-4 mb-0 fs-5 text-secondary">Verificando proximidade do dispositivo...</p>
                     </div>
+                </div>
+            </div>
+        </div>
+          
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header primaryColor">
+                <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    <i class="fa-solid fa-xmark fa-xl" style="color: #FFF;"></i>
+                </a>
+            </div>
+            <div class="offcanvas-body p-4 primaryColor d-flex flex-column justify-content-between">
+                <a href="" class="py-4 rounded-0">
+                    <i class="fa-solid fa-cloud-arrow-down fa-lg me-3" style="color: #ffffff;"></i>
+                    <span class="text-white sidebar-text">Baixar documento</span>
+                </a>
+                <div class="py-4 rounded-0">
+                    <i class="fa-solid fa-pen-to-square fa-lg me-4" style="color: #ffffff;"></i>
+                    <span class="text-white sidebar-text">0/1 Assinaturas</span>
+                </div>
+                <div class="pt-4 rounded-0">
+                    <i class="fa-solid fa-arrow-right fa-lg me-4" style="color: #24d3fe;"></i>
+                    <span class="text-white sidebar-text">Assinar como parte</span>
+                </div>
+                <div class="mt-auto">
+                    <img class="letsSignLogo mb-5" src="../assets/images/LetsSignIcon.png" alt="LetsSign logo" />
                 </div>
             </div>
         </div>
