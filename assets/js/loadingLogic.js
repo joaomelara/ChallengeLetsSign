@@ -5,14 +5,21 @@ function checkProximity() {
     outroModal.hide();
 
     // Abre o modal de loading
-    const loadingModal = new bootstrap.Modal(document.getElementById('modalLoading'));
+    const loadingModal = new bootstrap.Modal(document.getElementById('modalLoading'), {
+        backdrop: 'static',
+        keyboard: false
+    });
     loadingModal.show();
 
     // Simula uma checagem de localização (ex: 2 segundos)
     setTimeout(() => {
         loadingModal.hide();
-        const successModal = new bootstrap.Modal(document.getElementById('modalSucesso'));
-        successModal.show();
+        const modalSucesso = new bootstrap.Modal(document.getElementById('modalSucesso'), {
+            backdrop: 'static',
+            keyboard: false
+        });
+        localStorage.setItem("usedAltDevice", true);
+        modalSucesso.show();
     }, 2000);
 }
 

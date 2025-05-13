@@ -6,12 +6,17 @@ a {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures the body spans the full height of the viewport */
+    min-height: 100vh;
 }
 
 main {
     display: flex;
-    flex: 1; /* Allows the main content to grow and fill available space */
+    flex: 1;
+    z-index: 1;
+}
+
+header {
+    z-index: 99;
 }
 
 .fiscutNav {
@@ -23,6 +28,8 @@ main {
 .mainContent {
     width: 80%;
     max-width: 1000px;
+    margin: 3rem;
+    margin-left: 24.5rem;
 }
 
 .genericIcon {
@@ -44,7 +51,7 @@ main {
     max-height: 48px;
     width: auto;
     max-width: 100%;
-    margin-top: 50vh !important;
+    margin-top: 45vh !important;
 }
 
 .primaryColor {
@@ -61,19 +68,27 @@ main {
     font-weight: 500;
 }
 
+.sidebar-area {
+    max-width: 21.5rem !important;
+}
+
 .sidebarDark {
     display: flex;
     flex-direction: column;
     min-width: 4.5rem;
     max-width: 4.5rem;
+    padding-top: 65px;
     flex: 1;
+    min-height: 100vh;
 }
 
 .sidebarLight {
     display: flex;
     flex-direction: column;
-    min-width: 15rem;
+    min-width: 17rem;
     max-width: 17rem;
+    padding-top: 65px;
+    min-height: 100vh;
 }
 
 .sidebar-text {
@@ -119,20 +134,7 @@ main {
     background-color: #2CD989;
     border-radius: 4.5px;
     width: 25%;
-}
-
-.loading-progress2 {
-    height: 100%;
-    background-color: #2CD989;
-    border-radius: 4.5px;
-    width: 50%;
-}
-
-.loading-progress3 {
-    height: 100%;
-    background-color: #2CD989;
-    border-radius: 4.5px;
-    width: 75%;
+    transition: width 0.3s ease-in-out;
 }
 
 .loading-progress4 {
@@ -167,6 +169,26 @@ main {
 
 }
 
+.signatureCanvas {
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-sign {
+    background-color: #2CD989 !important;
+    border-color: #2CD989 !important;
+    border-radius: 10px !important;
+}
+
+.button-delete {
+    background-color: #FF4D4D !important;
+    border-color: #FF4D4D !important;
+    border-radius: 10px !important;
+}
+
 .authIcons {
     height: auto;
     max-height: 170px;
@@ -175,19 +197,19 @@ main {
 }
 
 .custom-modal-size {
-    max-width: 700px; 
+    max-width: 700px;
     width: 100%;
 }
 
-  .loading-box {
+.loading-box {
     max-width: 350px;
     margin: 0 auto;
-  }
+}
 
-  .modal-backdrop.show {
+.modal-backdrop.show {
     opacity: 0.7;
     background-color: #000;
-  }
+}
 
 .fa-auth-icon {
     font-size: 110px;
@@ -202,12 +224,39 @@ main {
 .fa-progress-icon {
     font-size: 30px;
     color: #2CD989;
+ }
+
+.btn-group-toggle {
+    width: 75%;
+}
+
+.btn-group-toggle .btn {
+    background-color: #5B5A8B;
+    color: #fff;
+    border-color: #5B5A8B;
+}
+
+/* Focused button color (active) */
+.btn-group-toggle .btn.active {
+    background-color: #8654FF;
+    color: #fff;
+    border-color: #8654FF;
+}
+
+.btn-group-toggle .btn:hover {
+    background-color: #8f6ddf;
+    color: #fff;
+    border-color: #8f6ddf;
 }
 
 @media (max-width: 1052px) {
 
     .fa-auth-icon {
         font-size: 80px;
+    }
+
+    .btn-group-toggle {
+        width: 100%;
     }
 
     .titleLetsSign {
@@ -232,7 +281,7 @@ main {
 
     .genericIcon {
         height: auto;
-        max-height: 26px;
+        max-height: 28px;
         width: auto;
         max-width: 100%;
     }
@@ -243,6 +292,56 @@ main {
 
     .mainContent {
         width: 100%;
+        margin: 2rem;
+        margin-left: 2rem;
     }
 
+}
+
+@media (min-height: 900px) {
+    .letsSignLogoSidebar {
+        margin-top: 53.5vh !important;
+    }
+}
+
+@media (max-height: 768px) {
+    .letsSignLogoSidebar {
+        margin-top: 40vh !important;
+    }
+}
+
+@media (max-height: 700px) {
+    .letsSignLogoSidebar {
+        margin-top: 35vh !important;
+    }
+}
+
+@media (max-height: 632px) {
+    .letsSignLogoSidebar {
+        margin-top: 30vh !important;
+    }
+}
+
+@media (max-height: 580px) {
+    .letsSignLogoSidebar {
+        margin-top: 25vh !important;
+    }
+}
+
+@media (max-height: 540px) {
+    .letsSignLogoSidebar {
+        margin-top: 20vh !important;
+    }
+}
+
+@media (max-height: 540px) {
+    .letsSignLogoSidebar {
+        display: none !important;
+    }
+}
+
+@media (max-height: 500px) {
+    .letsSignLogo {
+        display: none !important;
+    }
 }

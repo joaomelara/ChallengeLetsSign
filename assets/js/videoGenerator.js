@@ -6,10 +6,21 @@ const btnRetry = document.getElementById('btnRetry');
 
 let stream;
 
+
 const startCamera = async () => {
     try {
+        // Disable the capture button until the camera is ready
+        btnCapture.disabled = true;
+
         stream = await navigator.mediaDevices.getUserMedia({ video: true });
         video.srcObject = stream;
+
+        // Wait for the video to be ready
+        video.onloadedmetadata = () => {
+            video.play();
+            btnCapture.disabled = false; // Enable the capture button once the camera is ready
+        };
+
         video.classList.remove('d-none');
         canvas.classList.add('d-none');
         btnCapture.classList.remove('d-none');
@@ -19,17 +30,16 @@ const startCamera = async () => {
         console.error('Erro ao acessar a câmera:', err.message);
         alert('Não foi possível acessar sua câmera. Tente outro dispositivo.');
 
-        // Fecha o modal da câmera, se estiver aberto
+        // Close the camera modal if it's open
         const modalCameraEl = document.getElementById('modalCamera');
         const modalCamera = bootstrap.Modal.getInstance(modalCameraEl);
         if (modalCamera) modalCamera.hide();
     }
 };
 
-
 document.getElementById('modalCamera').addEventListener('shown.bs.modal', startCamera);
 
-// Captura a foto
+// Capture the photo
 btnCapture.addEventListener('click', () => {
     const context = canvas.getContext('2d');
     canvas.width = video.videoWidth;
@@ -42,7 +52,7 @@ btnCapture.addEventListener('click', () => {
     btnRetry.classList.remove('d-none');
 });
 
-// Refazer a foto
+// Retry taking the photo
 btnRetry.addEventListener('click', () => {
     canvas.classList.add('d-none');
     video.classList.remove('d-none');
@@ -51,19 +61,35 @@ btnRetry.addEventListener('click', () => {
     btnRetry.classList.add('d-none');
 });
 
-// Confirmar a foto
+// Confirm the photo
 btnConfirm.addEventListener('click', () => {
     const dataUrl = canvas.toDataURL('image/png');
     console.log('Foto confirmada (base64):', dataUrl);
-    // Aqui você pode enviar para o servidor ou prosseguir no fluxo.
-    alert('Foto confirmada!');
+    localStorage.setItem('faceImage', dataUrl);
+    // Here you can send the photo to the server or proceed with the flow
     bootstrap.Modal.getInstance(document.getElementById('modalCamera')).hide();
     stream.getTracks().forEach(track => track.stop());
 });
 
-// Ao fechar o modal, parar a câmera
+// Stop the camera when the modal is closed
 document.getElementById('modalCamera').addEventListener('hidden.bs.modal', () => {
     if (stream) {
         stream.getTracks().forEach(track => track.stop());
     }
 });
+
+function faceStore() {
+    try {
+        if (localStorage.getItem('faceImage') !== null || localStorage.getItem('faceImage') !== undefined || localStorage.getItem('faceImage') !== '') {
+            window.location.href = 'signing.html';
+            localStorage.setItem('faceStored', true);
+        } else if(localStorage.getItem('usedAltDevice') == "true") {
+            window.location.href = 'signing.html';
+            localStorage.setItem('faceStored', true);
+        }
+    } catch (error) {
+        location.reload();
+        alert('Erro ao armazenar a imagem da face. Tente novamente.');
+    }
+
+}
