@@ -1,18 +1,35 @@
 const userData = JSON.parse(localStorage.getItem("formData"));
 
+if (!window.location.href.includes("conclusion.html")) {
+  if (localStorage.getItem("signed") == "true") {
+    alert("Você já assinou o documento. Caso queira testar novamente o mock, apague o localStorage, fizemos isso para evitar que o usuário voltasse para partes que ele já concluiu.");
+    window.location.href = "conclusion.html";
+  }
+}
+
 if (window.location.href.includes("authentication.html")) {
   if (localStorage.getItem("authenticated") == "false" || localStorage.getItem("authenticated") == null) {
     window.location.href = "index.html";
   }
 } else if (localStorage.getItem("authenticated") && window.location.href.includes("index.html") || window.location.href.includes("tokenVerification.html")) {
-  localStorage.setItem("authenticated", false);
-  localStorage.setItem("faceStored", false);
-  localStorage.removeItem("usedAltDevice");
-  console.log("User unauthenticated.")
+  if (localStorage.getItem("signed") == "false" || localStorage.getItem("signed") == null) {
+    localStorage.setItem("authenticated", false);
+    localStorage.setItem("faceStored", false);
+    localStorage.removeItem("usedAltDevice");
+    localStorage.removeItem("signatureName");
+    localStorage.removeItem("faceImage");
+    console.log("User unauthenticated.")
+  }
 }
 
-if(window.location.href.includes("signing.html")) {
+if (window.location.href.includes("signing.html")) {
   if (localStorage.getItem("authenticated") == "false" || localStorage.getItem("authenticated") == null || localStorage.getItem("faceStored") == "false" || localStorage.getItem("faceStored") == null) {
+    window.location.href = "index.html";
+  }
+}
+
+if (window.location.href.includes("conclusion.html")) {
+  if (localStorage.getItem("signed") == "false" || localStorage.getItem("signed") == null) {
     window.location.href = "index.html";
   }
 }

@@ -47,11 +47,35 @@ function toggleSignatureMode(mode, element) {
 }
 
 function saveCanvasAndSign() {
-    // Convert the canvas content to a data URL (base64 string)
-    const dataURL = canvas.toDataURL('image/png');
+    try {
+        // Convert the canvas content to a data URL (base64 string)
+        const dataURL = canvas.toDataURL('image/png');
 
-    // Save the data URL to localStorage
-    localStorage.setItem('signatureImage', dataURL);
+        // Save the data URL to localStorage
+        localStorage.setItem('signatureImage', dataURL);
+        localStorage.setItem("signed", true);
+        console.log('Signature saved to localStorage:', dataURL);
 
-    console.log('Signature saved to localStorage:', dataURL);
+        window.location.href = "conclusion.html";
+
+    } catch (error) {
+
+    }
+
+}
+
+function saveSignNameAndSign() {
+    const userData = JSON.parse(localStorage.getItem("formData"));
+
+    if (document.getElementById("nameInput").value == "") {
+        alert("Por favor, preencha o campo");
+        return false;
+    } else if (document.getElementById("nameInput").value == userData.name) {
+        localStorage.setItem("signed", true);
+        return true;
+    } else {
+        localStorage.setItem("signed", true);
+        localStorage.setItem("signatureName", document.getElementById("nameInput").value);
+        return true;
+    }
 }
