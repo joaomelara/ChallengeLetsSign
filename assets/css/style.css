@@ -5,7 +5,7 @@ a {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 
 main {
@@ -14,7 +14,7 @@ main {
     z-index: 1;
 }
 
-header{
+header {
     z-index: 99;
 }
 
@@ -68,7 +68,7 @@ header{
 }
 
 .sidebar-area {
-    max-width: 21.5rem  !important;
+    max-width: 21.5rem !important;
 }
 
 .sidebarDark {
@@ -133,7 +133,7 @@ header{
     background-color: #2CD989;
     border-radius: 4.5px;
     width: 25%;
-    transition: width 0.3s ease-in-out; 
+    transition: width 0.3s ease-in-out;
 }
 
 .emptySpace {
@@ -161,6 +161,26 @@ header{
 
 }
 
+.signatureCanvas {
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-sign {
+    background-color: #2CD989 !important;
+    border-color: #2CD989 !important;
+    border-radius: 10px !important;
+}
+
+.button-delete {
+    background-color: #FF4D4D !important;
+    border-color: #FF4D4D !important;
+    border-radius: 10px !important;
+}
+
 .authIcons {
     height: auto;
     max-height: 170px;
@@ -169,29 +189,56 @@ header{
 }
 
 .custom-modal-size {
-    max-width: 700px; 
+    max-width: 700px;
     width: 100%;
 }
 
-  .loading-box {
+.loading-box {
     max-width: 350px;
     margin: 0 auto;
-  }
+}
 
-  .modal-backdrop.show {
+.modal-backdrop.show {
     opacity: 0.7;
     background-color: #000;
-  }
+}
 
 .fa-auth-icon {
     font-size: 110px;
     color: #35326F;
 }
 
+.btn-group-toggle {
+    width: 75%;
+}
+
+.btn-group-toggle .btn {
+    background-color: #5B5A8B;
+    color: #fff;
+    border-color: #5B5A8B;
+}
+
+/* Focused button color (active) */
+.btn-group-toggle .btn.active {
+    background-color: #8654FF;
+    color: #fff;
+    border-color: #8654FF;
+}
+
+.btn-group-toggle .btn:hover {
+    background-color: #8f6ddf;
+    color: #fff;
+    border-color: #8f6ddf;
+}
+
 @media (max-width: 1052px) {
 
     .fa-auth-icon {
         font-size: 80px;
+    }
+
+    .btn-group-toggle {
+        width: 100%;
     }
 
     .titleLetsSign {
