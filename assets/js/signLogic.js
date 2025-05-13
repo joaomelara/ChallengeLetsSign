@@ -45,3 +45,13 @@ function toggleSignatureMode(mode, element) {
     // Add 'active' class to the clicked button
     element.classList.add('active');
 }
+
+function saveCanvasAndSign() {
+    // Convert the canvas content to a data URL (base64 string)
+    const dataURL = canvas.toDataURL('image/png');
+
+    // Save the data URL to localStorage
+    localStorage.setItem('signatureImage', dataURL);
+
+    console.log('Signature saved to localStorage:', dataURL);
+}
