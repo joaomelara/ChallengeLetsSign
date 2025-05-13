@@ -188,6 +188,25 @@ header{
     color: #35326F;
 }
 
+.btn-group-toggle .btn {
+    background-color: #5B5A8B;
+    color: #fff;
+    border-color: #5B5A8B;
+}
+
+/* Focused button color (active) */
+.btn-group-toggle .btn.active {
+    background-color: #8654FF;
+    color: #fff;
+    border-color: #8654FF;
+}
+
+.btn-group-toggle .btn:hover {
+    background-color: #8f6ddf;
+    color: #fff;
+    border-color: #8f6ddf;
+}
+
 @media (max-width: 1052px) {
 
     .fa-auth-icon {

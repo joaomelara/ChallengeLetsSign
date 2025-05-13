@@ -67,7 +67,6 @@
                     </li>
                     <li>
                         <div class="nav-link py-4 rounded-0">
-                            <p class="small-sidebar-text mb-2 emailField"></p>
                             <p class="text-white sidebar-text mt-2">Assinar como parte</p>
                         </div>
                     </li>
@@ -96,13 +95,10 @@
             </p>
 
             <div class="mt-4 btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                    <input type="radio" name="signatureMode" onclick="toggleSignatureMode('typed')" autocomplete="off"
-                        checked>
+                <label onclick="toggleSignatureMode('typed', this)" class="btn btn-secondary active">
                     Digitar assinatura
                 </label>
-                <label class="btn btn-secondary">
-                    <input type="radio" name="signatureMode" onclick="toggleSignatureMode('drawn')" autocomplete="off">
+                <label onclick="toggleSignatureMode('drawn', this)" class="btn btn-secondary">
                     Desenhar assinatura
                 </label>
             </div>
