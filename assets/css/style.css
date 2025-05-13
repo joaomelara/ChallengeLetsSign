@@ -1,3 +1,4 @@
+
 a {
     text-decoration: none !important;
 }
@@ -20,7 +21,7 @@ main {
 }
 
 .mainContent {
-    width: 60%;
+    width: 80%;
     max-width: 1000px;
 }
 
@@ -134,6 +135,13 @@ main {
     width: 75%;
 }
 
+.loading-progress4 {
+    height: 100%;
+    background-color: #2CD989;
+    border-radius: 4.5px;
+    width: 100%;
+}
+
 .emptySpace {
     height: 2%;
     width: 10px;
@@ -184,6 +192,16 @@ main {
 .fa-auth-icon {
     font-size: 110px;
     color: #35326F;
+}
+
+.fa-check-custom{
+    font-size: 150px;
+    color:#2CD989;
+}
+
+.fa-progress-icon {
+    font-size: 30px;
+    color: #2CD989;
 }
 
 @media (max-width: 1052px) {
