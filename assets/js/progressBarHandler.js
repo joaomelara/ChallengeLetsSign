@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     'tokenVerification.html',
     'authentication.html',
     'signing.html',
-    'abobrinah.html',
+    'conclusion.html',
   ];
 
   const currentPage = window.location.pathname.split('/').pop();

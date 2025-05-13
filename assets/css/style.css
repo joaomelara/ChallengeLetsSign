@@ -137,13 +137,6 @@ header {
     transition: width 0.3s ease-in-out;
 }
 
-.loading-progress4 {
-    height: 100%;
-    background-color: #2CD989;
-    border-radius: 4.5px;
-    width: 100%;
-}
-
 .emptySpace {
     height: 2%;
     width: 10px;
