@@ -14,7 +14,7 @@
     <link rel="icon" href="https://www.letssign.com.br/wp-content/uploads/2023/06/fav-sign.svg" sizes="192x192" />
 </head>
 
-<body onload="loadAll()" class="d-flex flex-column">
+<body onload="loadEmail()" class="d-flex flex-column">
     <header>
         <nav class="navbar navbar-light fixed-top bg-white fiscutNav align-items-center">
             <div class="d-flex align-items-center">
@@ -67,6 +67,7 @@
                     </li>
                     <li>
                         <div class="nav-link py-4 rounded-0">
+                            <p class="small-sidebar-text mb-2 emailField"></p>
                             <p class="text-white sidebar-text mt-2">Assinar como parte</p>
                         </div>
                     </li>
@@ -121,6 +122,36 @@
                 <div class="mt-2 d-flex justify-content-between">
                     <button class="btn btn-secondary" onclick="clearCanvas()">Limpar assinatura</button>
                     <button type="button" class="btn btn-secondary" onclick="checkProximity()">Prosseguir</button>
+                </div>
+            </div>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header primaryColor">
+                    <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                        aria-controls="offcanvasExample">
+                        <i class="fa-solid fa-xmark fa-xl" style="color: #FFF;"></i>
+                    </a>
+                </div>
+                <div class="offcanvas-body p-4 primaryColor d-flex flex-column justify-content-between">
+                    <a href="" class="py-4 rounded-0">
+                        <i class="fa-solid fa-cloud-arrow-down fa-lg me-3" style="color: #ffffff;"></i>
+                        <span class="text-white sidebar-text">Baixar documento</span>
+                    </a>
+                    <div class="py-4 rounded-0">
+                        <i class="fa-solid fa-pen-to-square fa-lg me-4" style="color: #ffffff;"></i>
+                        <span class="text-white sidebar-text">0/1 Assinaturas</span>
+                    </div>
+                    <div class="pt-4 align-items-center d-flex flex-row rounded-0">
+                        <i class="fa-solid fa-arrow-right fa-lg me-4" style="color: #24d3fe;"></i>
+                        <div class="d-flex flex-column">
+                            <span class="small-sidebar-text mb-2 emailField"></span>
+                            <span class="text-white sidebar-text">Assinar como parte</span>
+                        </div>
+                    </div>
+                    <div class="mt-auto">
+                        <img class="letsSignLogo mb-5" src="../assets/images/LetsSignIcon.png" alt="LetsSign logo" />
+                    </div>
                 </div>
             </div>
 
