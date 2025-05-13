@@ -4,9 +4,17 @@ if (window.location.href.includes("authentication.html")) {
   if (localStorage.getItem("authenticated") == "false" || localStorage.getItem("authenticated") == null) {
     window.location.href = "index.html";
   }
-} else if (localStorage.getItem("authenticated") && !window.location.href.includes("authentication.html")) {
+} else if (localStorage.getItem("authenticated") && window.location.href.includes("index.html") || window.location.href.includes("tokenVerification.html")) {
   localStorage.setItem("authenticated", false);
+  localStorage.setItem("faceStored", false);
+  localStorage.removeItem("usedAltDevice");
   console.log("User unauthenticated.")
+}
+
+if(window.location.href.includes("signing.html")) {
+  if (localStorage.getItem("authenticated") == "false" || localStorage.getItem("authenticated") == null || localStorage.getItem("faceStored") == "false" || localStorage.getItem("faceStored") == null) {
+    window.location.href = "index.html";
+  }
 }
 
 function loadEmail() {
@@ -25,6 +33,20 @@ function loadEmail() {
     console.error("Error loading email:", error);
   }
 
+}
+
+function loadName() {
+  try {
+    if (userData) {
+      document.getElementById("nameInput").value = userData.name;
+
+    } else {
+      console.log("No name found in local storage.");
+    }
+
+  } catch (error) {
+    console.error("Error loading name:", error);
+  }
 }
 
 function loadAll() {

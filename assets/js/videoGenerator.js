@@ -6,6 +6,7 @@ const btnRetry = document.getElementById('btnRetry');
 
 let stream;
 
+
 const startCamera = async () => {
     try {
         // Disable the capture button until the camera is ready
@@ -64,6 +65,7 @@ btnRetry.addEventListener('click', () => {
 btnConfirm.addEventListener('click', () => {
     const dataUrl = canvas.toDataURL('image/png');
     console.log('Foto confirmada (base64):', dataUrl);
+    localStorage.setItem('faceImage', dataUrl);
     // Here you can send the photo to the server or proceed with the flow
     bootstrap.Modal.getInstance(document.getElementById('modalCamera')).hide();
     stream.getTracks().forEach(track => track.stop());
@@ -75,3 +77,19 @@ document.getElementById('modalCamera').addEventListener('hidden.bs.modal', () =>
         stream.getTracks().forEach(track => track.stop());
     }
 });
+
+function faceStore() {
+    try {
+        if (localStorage.getItem('faceImage') !== null || localStorage.getItem('faceImage') !== undefined || localStorage.getItem('faceImage') !== '') {
+            window.location.href = 'signing.html';
+            localStorage.setItem('faceStored', true);
+        } else if(localStorage.getItem('usedAltDevice') == "true") {
+            window.location.href = 'signing.html';
+            localStorage.setItem('faceStored', true);
+        }
+    } catch (error) {
+        location.reload();
+        alert('Erro ao armazenar a imagem da face. Tente novamente.');
+    }
+
+}

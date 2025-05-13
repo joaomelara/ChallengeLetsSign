@@ -18,6 +18,7 @@ function checkProximity() {
             backdrop: 'static',
             keyboard: false
         });
+        localStorage.setItem("usedAltDevice", true);
         modalSucesso.show();
     }, 2000);
 }
